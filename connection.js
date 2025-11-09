@@ -17,7 +17,8 @@ async function insert(){
         console.log('Connected to MongoDB');
         const db = client.db('university');
         const collection = db.collection('students');
-        // const result = await collection.insertOne({name:'Ahmed Ibrahim', department:'BA', address: 'Mogadishu', year:3});
+        // const result = await collection.insertOne({name:'Zahra Ibrahim', department:'BA', address: 'Mogadishu', year:6});
+        // console.log('Insertion result:', result.insertedId);
 
         //inset mony
 
@@ -50,9 +51,17 @@ async function insert(){
         // console.log('Update Many result:', updateManyStudents.modifiedCount)
 
         //Delete one student
-        const deleteOne = await collection.deleteOne(
-            {name:'Ahmed Ibrahim'}
+
+        // const deleteOne = await collection.deleteOne(
+        //     {name:'Ahmed Ibrahim'}
+        // );
+        // console.log('Delete One result:', deleteOne.deletedCount)
+
+        //Delete many students
+        const deleteMany = await collection.deleteMany(
+            {year:6}
         );
+        console.log('Delete Many result:', deleteMany.deletedCount)
 
     }catch(err){
         console.error('Insertion error:', err);
