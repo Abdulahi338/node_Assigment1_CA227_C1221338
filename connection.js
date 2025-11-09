@@ -28,8 +28,31 @@ async function insert(){
         // ]);
         // console.log('Insertion result:', insertMony.insertedIds);
         // console.log('Insertion result:', result.insertedId);
-        const Allstudents  = await collection.find().toArray();
-        console.log('Finding all students',Allstudents)
+
+        //Find All Students
+
+        // const Allstudents  = await collection.find().toArray();
+        // console.log('Finding all students',Allstudents)
+
+        //Update one Student
+        // const updateStudent = await collection.updateOne(
+        //     {name:'Ahmed Ibrahim'},
+        //     {$set: {year:3}}
+        // );
+        // console.log('Update result:', updateStudent.modifiedCount
+        // )
+        //update many students
+
+        // const updateManyStudents = await collection.updateMany(
+        //     {department:'IT'},
+        //     {$set: {year:6}}
+        // );
+        // console.log('Update Many result:', updateManyStudents.modifiedCount)
+
+        //Delete one student
+        const deleteOne = await collection.deleteOne(
+            {name:'Ahmed Ibrahim'}
+        );
 
     }catch(err){
         console.error('Insertion error:', err);
