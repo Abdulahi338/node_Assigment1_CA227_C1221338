@@ -21,13 +21,15 @@ async function insert(){
 
         //inset mony
 
-        const insertMony = await collection.insertMany([
-            {name:'Sara Ali', department:'CS', address: 'Hargeisa', year:2},
-            {name:'Omar Hassan', department:'IT', address: 'Bosaso', year:1},
-            {name:'Laila Yusuf', department:'ENG', address: 'Kismayo', year:4}
-        ]);
-        console.log('Insertion result:', insertMony.insertedIds);
+        // const insertMony = await collection.insertMany([
+        //     {name:'Sara Ali', department:'CS', address: 'Hargeisa', year:2},
+        //     {name:'Omar Hassan', department:'IT', address: 'Bosaso', year:1},
+        //     {name:'Laila Yusuf', department:'ENG', address: 'Kismayo', year:4}
+        // ]);
+        // console.log('Insertion result:', insertMony.insertedIds);
         // console.log('Insertion result:', result.insertedId);
+        const Allstudents  = await collection.find().toArray();
+        console.log('Finding all students',Allstudents)
 
     }catch(err){
         console.error('Insertion error:', err);
